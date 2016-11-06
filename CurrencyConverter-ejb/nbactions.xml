@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-flyway</actionName>
+            <displayName>flyway</displayName>
+            <goals>
+                <goal>flyway:migrate</goal>
+            </goals>
+            <properties>
+                <flyway.url>jdbc:postgresql://localhost:5432/converter</flyway.url>
+                <flyway.user>test</flyway.user>
+                <flyway.password>test</flyway.password>
+            </properties>
+        </action>
+    </actions>
