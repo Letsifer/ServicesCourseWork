@@ -29,7 +29,7 @@ public class Currency implements Serializable {
     
     private Character icon;
     
-    private List<Currency> comparations;
+    private List<Comparation> comparations;
     
     @Override
     public int hashCode() {
@@ -49,11 +49,5 @@ public class Currency implements Serializable {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "edu.converter.Currency[ id=" + id + " ]";
-    }
-    
+    }    
 }
