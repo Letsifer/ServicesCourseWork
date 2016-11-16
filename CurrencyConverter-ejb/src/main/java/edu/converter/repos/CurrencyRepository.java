@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
  * @author Евгений
  */
 @Repository
-public interface ConverterRepository extends BaseRepository<Currency, Integer>{
+public interface CurrencyRepository extends BaseRepository<Currency, Integer>{
     
 }

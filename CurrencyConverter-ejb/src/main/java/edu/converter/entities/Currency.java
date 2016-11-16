@@ -1,7 +1,6 @@
 package edu.converter.entities;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,8 +27,6 @@ public class Currency implements Serializable {
     private String title;
     
     private Character icon;
-    
-    private List<Comparation> comparations;
     
     @Override
     public int hashCode() {

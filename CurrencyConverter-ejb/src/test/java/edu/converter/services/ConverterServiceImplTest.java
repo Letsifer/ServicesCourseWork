@@ -1,7 +1,7 @@
 package edu.converter.services;
 
 import edu.converter.entities.Currency;
-import edu.converter.repos.ConverterRepository;
+import edu.converter.repos.ComparationRepository;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Before;
@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
 
 import static org.mockito.Mockito.*;
 import static org.mockito.Matchers.*;
+import edu.converter.repos.CurrencyRepository;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -29,12 +31,14 @@ public class ConverterServiceImplTest {
      */
     @Test
     public void testGetCurrencyies() {
-        ConverterRepository repository = mock(ConverterRepository.class);
+        CurrencyRepository repository = mock(CurrencyRepository.class);
+        ComparationRepository comparationRepository = mock(ComparationRepository.class);
+        EntityManager manager = mock(EntityManager.class);
         Currency currency = new Currency();
         currency.setTitle("dollar");
         currency.setId(1);
         when(repository.findAll()).thenReturn(Arrays.asList(currency));
-        ConverterServiceImpl service = new ConverterServiceImpl(repository);
+        ConverterServiceImpl service = new ConverterServiceImpl(repository, comparationRepository, manager);
         List<Currency> list = service.getCurrencyies();
         assertEquals(list.size(), 1);
         assertEquals(currency.getId(), list.get(0).getId());
